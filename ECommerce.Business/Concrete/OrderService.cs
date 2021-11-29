@@ -16,14 +16,17 @@ namespace ECommerce.Business.Concrete
             _orderRepository = new OrderRepository();
         }
         public Order CreateOrder(Order order)
-        {
-            
+        {          
             return _orderRepository.CreateOrder(order);
         }
 
         public void DeleteOrder(int oid)
         {
-            _orderRepository.DeleteOrder(oid);
+            if (_orderRepository.GetOrderByID(oid)!=null)
+            {
+                _orderRepository.DeleteOrder(oid);
+            }
+            throw new Exception("Order is already deleted.");
         }
 
         public List<Order> GetAllOrders()
@@ -40,5 +43,6 @@ namespace ECommerce.Business.Concrete
         {
             return _orderRepository.UpdateOrder(order);
         }
+        
     }
 }

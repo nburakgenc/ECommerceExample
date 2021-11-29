@@ -33,7 +33,7 @@ namespace ECommerce.API
             services.AddSingleton<IProductRepository, ProductRepository>();
             services.AddSingleton<IOrderService, OrderService>();
             services.AddSingleton<IOrderRepository, OrderRepository>();
-            //services.AddSwaggerDocument();
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,8 +45,8 @@ namespace ECommerce.API
             }
 
             app.UseRouting();
-            //app.UseOpenApi();
-            //app.UseSwaggerUi3();
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
