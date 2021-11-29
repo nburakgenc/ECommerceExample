@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NSwag.Annotations;
 
 namespace ECommerce.API.Controllers
 {
@@ -20,7 +21,7 @@ namespace ECommerce.API.Controllers
             _productService = new ProductService();
         }
         /// <summary>
-        /// Get All Products as a list
+        /// Getting a list of all products...
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -29,7 +30,7 @@ namespace ECommerce.API.Controllers
             return _productService.GetAllProducts();
         }
         /// <summary>
-        /// Get a Product with product ID
+        /// Getting a product with productID.
         /// </summary>
         /// <param name="pid"></param>
         /// <returns></returns>
@@ -39,7 +40,7 @@ namespace ECommerce.API.Controllers
             return _productService.GetProductByID(pid);
         }
         /// <summary>
-        /// Create a Product
+        /// Creating a product. Do not forget that productID is randomly assigned.
         /// </summary>
         /// <param name="product"></param>
         /// <returns></returns>
@@ -49,7 +50,7 @@ namespace ECommerce.API.Controllers
             return _productService.CreateProduct(product);
         }
         /// <summary>
-        /// Update a Product
+        /// Updating a product.
         /// </summary>
         /// <param name="product"></param>
         /// <returns></returns>
@@ -59,7 +60,7 @@ namespace ECommerce.API.Controllers
             return _productService.UpdateProduct(product);
         }
         /// <summary>
-        /// Delete a Product with a product ID
+        /// Deleting a product with productID.
         /// </summary>
         /// <param name="pid"></param>
         [HttpDelete("{pid}")]
@@ -67,5 +68,6 @@ namespace ECommerce.API.Controllers
         {
             _productService.DeleteProduct(pid);
         }
+        
     }
 }

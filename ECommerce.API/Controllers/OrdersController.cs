@@ -20,7 +20,7 @@ namespace ECommerce.API.Controllers
             _orderService = new OrderService();
         }
         /// <summary>
-        /// Get All Orders as a list
+        /// Getting a list of all orders.
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -29,7 +29,7 @@ namespace ECommerce.API.Controllers
             return _orderService.GetAllOrders();
         }
         /// <summary>
-        /// Get an Order with order ID
+        /// Getting an order with orderID.
         /// </summary>
         /// <param name="oid"></param>
         /// <returns></returns>
@@ -39,7 +39,7 @@ namespace ECommerce.API.Controllers
             return _orderService.GetOrderByID(oid);
         }
         /// <summary>
-        /// Create an Order
+        /// Creating an order. Remember that orderID cannot be in the body.
         /// </summary>
         /// <param name="order"></param>
         /// <returns></returns>
@@ -47,9 +47,9 @@ namespace ECommerce.API.Controllers
         public Order CreateOrder([FromBody] Order order)
         {
             return _orderService.CreateOrder(order);
-        }
+        }      
         /// <summary>
-        /// Update an Order
+        /// Updating an order.
         /// </summary>
         /// <param name="order"></param>
         /// <returns></returns>
@@ -57,9 +57,9 @@ namespace ECommerce.API.Controllers
         public Order UpdateOrder([FromBody] Order order)
         {
             return _orderService.UpdateOrder(order);
-        }
+        }    
         /// <summary>
-        /// Delete an Order with order ID
+        /// Deleting an order with an orderID.
         /// </summary>
         /// <param name="oid"></param>
         [HttpDelete("{oid}")]

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ECommerce.API</name>
+    </assembly>
+    <members>
+        <member name="M:ECommerce.API.Controllers.OrdersController.GetAllOrders">
+            <summary>
+            Getting a list of all orders.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECommerce.API.Controllers.OrdersController.GetOrderByID(System.Int32)">
+            <summary>
+            Getting an order with orderID.
+            </summary>
+            <param name="oid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECommerce.API.Controllers.OrdersController.CreateOrder(ECommerce.Entities.Order)">
+            <summary>
+            Creating an order. Remember that orderID cannot be in the body.
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECommerce.API.Controllers.OrdersController.UpdateOrder(ECommerce.Entities.Order)">
+            <summary>
+            Updating an order.
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECommerce.API.Controllers.OrdersController.DeleteOrder(System.Int32)">
+            <summary>
+            Deleting an order with an orderID.
+            </summary>
+            <param name="oid"></param>
+        </member>
+        <member name="M:ECommerce.API.Controllers.ProductsController.GetAllProducts">
+            <summary>
+            Getting a list of all products.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ECommerce.API.Controllers.ProductsController.GetProductByID(System.Int32)">
+            <summary>
+            Getting a product with productID.
+            </summary>
+            <param name="pid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECommerce.API.Controllers.ProductsController.CreateProduct(ECommerce.Entities.Product)">
+            <summary>
+            Creating a product. Do not forget that productID is randomly assigned.
+            </summary>
+            <param name="product"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECommerce.API.Controllers.ProductsController.UpdateProduct(ECommerce.Entities.Product)">
+            <summary>
+            Updating a product.
+            </summary>
+            <param name="product"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ECommerce.API.Controllers.ProductsController.DeleteProduct(System.Int32)">
+            <summary>
+            Deleting a product with productID.
+            </summary>
+            <param name="pid"></param>
+        </member>
+    </members>
+</doc>
