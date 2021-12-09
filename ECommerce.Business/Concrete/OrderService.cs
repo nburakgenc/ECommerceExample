@@ -26,7 +26,7 @@ namespace ECommerce.Business.Concrete
             {
                 _orderRepository.DeleteOrder(oid);
             }
-            throw new Exception("Order is already deleted.");
+            throw new Exception("Order is already deleted or never existed.");
         }
 
         public List<Order> GetAllOrders()
@@ -36,12 +36,25 @@ namespace ECommerce.Business.Concrete
 
         public Order GetOrderByID(int oid)
         {
-            return _orderRepository.GetOrderByID(oid);
+            var tempOrder = _orderRepository.GetOrderByID(oid);
+            if (tempOrder==null)
+            {
+                throw new Exception("There is no order found.");
+            }
+            else
+            {
+                return tempOrder;
+            }
+             
         }
 
         public Order UpdateOrder(Order order)
         {
-            return _orderRepository.UpdateOrder(order);
+            if (_orderRepository.GetOrderByID(order.orderID)!=null)
+            {
+                return _orderRepository.UpdateOrder(order);
+            }
+            throw new Exception("There is no order with this orderID");
         }
         
     }

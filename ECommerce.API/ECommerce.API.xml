@@ -39,7 +39,7 @@
         </member>
         <member name="M:ECommerce.API.Controllers.ProductsController.GetAllProducts">
             <summary>
-            Getting a list of all products.
+            Getting a list of all products...
             </summary>
             <returns></returns>
         </member>
